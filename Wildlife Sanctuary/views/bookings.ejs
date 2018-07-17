@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Booking</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+      th, td{
+        padding: 5px;
+      }
+    </style>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="nav">
+      <h1>WILDLIFE SANCTUARY</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Park Guide</a></li>
+      </ul>
+    </div> -->
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Wildlife Sanctuary</title>
+    
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+      <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    </head>
+    
+    <body>
+      <nav class="green darken-4" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo white-text">TheGreenPark</a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="/" class="white-text">Home</a>
+            </li>
+            <li>
+              <a href="#" class="white-text">Activities</a>
+            </li>
+            <li>
+              <a href="book" class="white-text">Book Tickets</a>
+            </li>
+            <li>
+              <a href="guide" class="white-text">Park Guide</a>
+            </li>
+            <li>
+              <a href="#" class="white-text">Login</a>
+            </li>
+          </ul>
+    
+          <ul id="nav-mobile" class="sidenav">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#">Activities</a>
+            </li>
+            <li>
+              <a href="book">Book Tickets</a>
+            </li>
+            <li>
+              <a href="guide">Park Guide</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
+      </nav>
+
+
+
+    <!--
+      received object is result object
+
+      result = {  outBinds: undefined,
+                  rowsAffected: undefined,
+                  metaData: [ { name: 'B_ID' }, { name: 'B_FARE' }, { name: 'B_DATE' } ],
+                  rows:
+                    [ [ 1, 500, 2018-02-19T18:30:00.000Z ],
+                    [ 2, 450, 2018-02-20T18:30:00.000Z ] ] }
+
+                    table prints result looping through metaData for fields and
+                    then through result array for data
+
+    -->
+    <div class="container">
+    <table>
+      <tr>
+
+        <% for(var i=0; i< data.metaData.length; i++) {%>
+          <th><%= data.metaData[i].name %></th>
+        <% } %>
+      </tr>
+      <% for(i=0; i< data.rows.length; i++) {%>
+        <tr>
+          <% for(var j=0; j< data.rows[i].length; j++) { %>
+            <td>
+              <%= data.rows[i][j] %>
+            </td>
+          <% } %>
+        </tr>
+      <% } %>
+    </table>
+    </div>
+    <!-- <div class="footer">
+      <p>Copyright 2018 by Wildlife Sanctuary</p>
+    </div>
+  </body>
+</html> -->
+
+
+<footer class="page-footer green darken-4">
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h1 class="header center text-lighten-2">Contact us</h1>
+          <p class="col s12 m6 l6">Phone: SomeDigits</p>
+          <p class="col s12 m6 l6">Email: TheGreenPark@SomeDomain.com</p>
+          <p class="col s12">Address: SomePlace at SomeTown, in SomeState, SomeCountry</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <span>TheGreenPark 2018 &copy;</span>
+    </div>
+  </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+</body>
+
+</html>
